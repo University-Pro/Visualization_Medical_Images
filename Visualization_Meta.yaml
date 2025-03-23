@@ -1,0 +1,193 @@
+########################################################## ACDC ##########################################################
+acdc: # path to acdc prediction 
+  pred_folders: # 分割结果的文件夹,其中也包括了Ground Truth
+    [
+      "./pictures/ACDC/GroundTruth",
+      "./pictures/ACDC/Swin-Unet",
+      "./pictures/ACDC/TransUnet",
+      "./pictures/ACDC/U-Net",
+      "./pictures/ACDC/DLKUNet-S",
+      "./pictures/ACDC/DLKUNet-M",
+      "./pictures/ACDC/DLKUNet-L",   
+      
+    ]
+  case_names:
+    [
+      'case_002_volume_ED.npz_img.nii.gz',
+      'case_002_volume_ES.npz_img.nii.gz',
+      'case_003_volume_ED.npz_img.nii.gz',
+      'case_003_volume_ES.npz_img.nii.gz',
+      'case_008_volume_ED.npz_img.nii.gz',
+      'case_008_volume_ES.npz_img.nii.gz',
+      'case_009_volume_ED.npz_img.nii.gz',
+      'case_009_volume_ES.npz_img.nii.gz',
+      'case_012_volume_ED.npz_img.nii.gz',
+      'case_012_volume_ES.npz_img.nii.gz',
+      'case_014_volume_ED.npz_img.nii.gz', 
+      'case_014_volume_ES.npz_img.nii.gz',
+      'case_017_volume_ED.npz_img.nii.gz',
+      'case_017_volume_ES.npz_img.nii.gz',
+      'case_024_volume_ED.npz_img.nii.gz',
+      'case_024_volume_ES.npz_img.nii.gz',
+      'case_042_volume_ED.npz_img.nii.gz',
+      'case_042_volume_ES.npz_img.nii.gz',
+      'case_048_volume_ED.npz_img.nii.gz',
+      'case_048_volume_ES.npz_img.nii.gz',
+      'case_049_volume_ED.npz_img.nii.gz',
+      'case_049_volume_ES.npz_img.nii.gz',
+      'case_053_volume_ED.npz_img.nii.gz',
+      'case_053_volume_ES.npz_img.nii.gz',
+      'case_055_volume_ED.npz_img.nii.gz',
+      'case_055_volume_ES.npz_img.nii.gz',
+      'case_064_volume_ED.npz_img.nii.gz',
+      'case_064_volume_ES.npz_img.nii.gz',
+      'case_067_volume_ED.npz_img.nii.gz',
+      'case_067_volume_ES.npz_img.nii.gz',
+      'case_079_volume_ED.npz_img.nii.gz',
+      'case_079_volume_ES.npz_img.nii.gz',
+      'case_081_volume_ED.npz_img.nii.gz',
+      'case_081_volume_ES.npz_img.nii.gz',
+      'case_088_volume_ED.npz_img.nii.gz',
+      'case_088_volume_ES.npz_img.nii.gz',
+      'case_092_volume_ED.npz_img.nii.gz',
+      'case_092_volume_ES.npz_img.nii.gz',
+      'case_095_volume_ED.npz_img.nii.gz',
+      'case_095_volume_ES.npz_img.nii.gz',
+    ]
+  data_folder: "./pictures/ACDC/Source" # 原图的位置
+  frame_nums: 
+    [
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '10',
+      '9',
+      '9',
+      '8',
+      '8',
+      '9',
+      '9',
+      '8',
+      '8',
+      '7',
+      '7',
+      '7',
+      '7',
+      '9',
+      '9',
+      '10',
+      '10',
+      '10',
+      '10',
+      '9',
+      '9',
+      '17',
+      '17',
+      '16',
+      '16',
+      '15',
+      '15',
+      '14',
+      '14',
+    ] 
+  num_classes: 4 # including background 
+  class_names: ["RV", "Myo", "LV"] # [right ventricle, myocardium, left ventricle]
+  colors: ["#FFFF1E", "#00F0F0", "#FF0000", "#FF0000"] # (Yellow, Cyan, Red)
+  fig_save_dir: "./pictures/ACDC/RenderOutput"
+
+########################################################## SYNAPSE ##########################################################
+synapse: # path to synapse prediction
+  pred_folders:  # 分割结果的文件夹
+    [
+      "./pictures/Synapse/GroundTruth",
+      "./pictures/Synapse/Swin-Unet",
+      "./pictures/Synapse/TransUnet",
+      "./pictures/Synapse/U-Net",
+      "./pictures/Synapse/DLKUNet-S",
+      "./pictures/Synapse/DLKUNet-M",
+      "./pictures/Synapse/DLKUNet-L",   
+      
+    ]
+  case_names:
+    [ 
+      'case0001_pred.nii.gz',
+      'case0002_pred.nii.gz',
+      'case0004_pred.nii.gz',
+      'case0008_pred.nii.gz', 
+      'case0022_pred.nii.gz',
+      'case0025_pred.nii.gz', 
+      'case0029_pred.nii.gz', 
+      'case0032_pred.nii.gz',
+      'case0036_pred.nii.gz',
+    ]
+  data_folder: "./pictures/Synapse/Source" # 图片底图
+  frame_nums: [147, 139, 140, 148, 89, 85, 100, 144, 184] # number of frames in each sample
+  num_classes: 9 # including background 
+  class_names: 
+    [
+      "spleen", 
+      "right kidney", 
+      "left kidney", 
+      "gallbladder", 
+      "liver", 
+      "stomach",
+      "aorta", 
+      "pancreas", 
+    ]
+  colors: ["#FFFF7B", "#B5FFFF", "#0080C0", "#FF8040", "#88FFA6",  "#FF0000", "#008000", "#FF80C0"]
+  fig_save_dir: "./pictures/Synapse/RenderOutput"
+########################################################## BRATS ##########################################################
+brats:
+  pred_folders: # path to brats2017 prediction 
+    [
+      "preds/Tumor/labelsTs",
+      "preds/Tumor/segformer3d",
+      "preds/Tumor/nnformer",
+      "preds/Tumor/unetr",
+    ]
+  case_names:
+    [
+      "BRATS_058.nii.gz",
+      "BRATS_059.nii.gz",
+      "BRATS_076.nii.gz",
+      "BRATS_077.nii.gz",
+      "BRATS_099.nii.gz",
+      "BRATS_113.nii.gz",
+      "BRATS_114.nii.gz",
+      "BRATS_124.nii.gz", 
+      "BRATS_139.nii.gz",
+      "BRATS_151.nii.gz",
+      "BRATS_152.nii.gz",
+      "BRATS_157.nii.gz",
+      "BRATS_190.nii.gz",
+      "BRATS_240.nii.gz",
+      "BRATS_242.nii.gz",
+      "BRATS_295.nii.gz",
+      "BRATS_305.nii.gz",
+      "BRATS_325.nii.gz",
+      "BRATS_331.nii.gz",
+      "BRATS_362.nii.gz",
+      "BRATS_389.nii.gz",
+      "BRATS_425.nii.gz",
+      "BRATS_432.nii.gz",
+      "BRATS_450.nii.gz",
+    ]
+  data_folder: "data/TUMOR"
+  frame_nums: 128 # number of frames in each data 
+  num_classes: 4 # including background 
+  class_names: 
+    [
+      "Whole Tumor", 
+      "Enhancing Tumore", 
+      "Tumor Core", 
+    ]
+  colors: ["#FFFF1E", "#007339", "#FF0000", "#FF0000"] 
+  fig_save_dir: "renders/TUMOR"
