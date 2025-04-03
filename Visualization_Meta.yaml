@@ -144,6 +144,7 @@ synapse: # path to synapse prediction
     ]
   colors: ["#FFFF7B", "#B5FFFF", "#0080C0", "#FF8040", "#88FFA6",  "#FF0000", "#008000", "#FF80C0"]
   fig_save_dir: "./pictures/Synapse/RenderOutput"
+
 ########################################################## BRATS ##########################################################
 brats:
   pred_folders: # path to brats2017 prediction 
