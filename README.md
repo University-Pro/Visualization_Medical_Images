@@ -45,3 +45,6 @@ python VisualizationCode_Pancreas.py
 
 ## 3.Output
 All rendered images will be saved in the respective `RenderOutput` directories, maintaining the original directory structure.
+![Result1](./Readme_Pic1.png)
+
+also you can change the output format such as PNG/JPEG/PDF/SVG...
